@@ -92,83 +92,91 @@
                         <span>Receivers</span>
                     </a>
                 </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title" href="#">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                        </svg>
-                        <span>Logistics </span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="{{ route('logistics.inwards') }}">Inwards</a></li>
-                        <li><a href="{{ route('logistics.drs') }}">DRS Upload</a></li>
-                        <li><a href="{{ route('logistics.barcodes') }}">Barcodes</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title" href="#">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                        </svg>
-                        <span>Financials </span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="{{ route('financials.income') }}">Income</a></li>
-                        <li><a href="{{ route('financials.expense') }}">Expense</a></li>
-                        <li><a href="{{ route('financials.purchase-bills') }}">Purchase Bills</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title" href="#">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                        </svg>
-                        <span>Reports </span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="{{ route('reports.booking') }}">Booking</a></li>
-                        <li><a href="{{ route('reports.delivery') }}">Delivery</a></li>
-                        <li><a href="{{ route('reports.bill-pending') }}">Bill Pending</a></li>
-                        <li><a href="{{ route('reports.daily-collection') }}">Daily Collection</a></li>
-                        <li><a href="{{ route('reports.gst') }}">GST Report</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('enquiries.index') }}">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-chat') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-chat') }}"></use>
-                        </svg>
-                        <span>Enquiries</span>
-                    </a>
-                </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('complaints.index') }}">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-chat') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-chat') }}"></use>
-                        </svg>
-                        <span>Complaints</span>
-                    </a>
-                </li>
+                @if(in_array(auth()->user()->role, ['Admin', 'Manager']))
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title" href="#">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg>
+                            <span>Logistics </span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('logistics.inwards') }}">Inwards</a></li>
+                            <li><a href="{{ route('logistics.drs') }}">DRS Upload</a></li>
+                            <li><a href="{{ route('logistics.barcodes') }}">Barcodes</a></li>
+                        </ul>
+                    </li>
+                @endif
+                @if(auth()->user()->role === 'Admin')
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title" href="#">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg>
+                            <span>Financials </span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('financials.income') }}">Income</a></li>
+                            <li><a href="{{ route('financials.expense') }}">Expense</a></li>
+                            <li><a href="{{ route('financials.purchase-bills') }}">Purchase Bills</a></li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array(auth()->user()->role, ['Admin', 'Manager']))
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title" href="#">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg>
+                            <span>Reports </span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('reports.booking') }}">Booking</a></li>
+                            <li><a href="{{ route('reports.delivery') }}">Delivery</a></li>
+                            <li><a href="{{ route('reports.bill-pending') }}">Bill Pending</a></li>
+                            <li><a href="{{ route('reports.daily-collection') }}">Daily Collection</a></li>
+                            <li><a href="{{ route('reports.gst') }}">GST Report</a></li>
+                        </ul>
+                    </li>
+                @endif
+                @if(in_array(auth()->user()->role, ['Admin', 'Manager']))
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title link-nav" href="{{ route('enquiries.index') }}">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-chat') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-chat') }}"></use>
+                            </svg>
+                            <span>Enquiries</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title link-nav" href="{{ route('complaints.index') }}">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-chat') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-chat') }}"></use>
+                            </svg>
+                            <span>Complaints</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="sidebar-main-title">
                     <div>
                         <h6 class="lan-8">Settings</h6>
@@ -186,29 +194,32 @@
                         <span>My Profile</span>
                     </a>
                 </li>
+                @if(auth()->user()->role === 'Admin')
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title" href="#">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg>
+                            <span>System Config </span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('config.carriers') }}">Carriers</a></li>
+                            <li><a href="{{ route('config.centers') }}">Centers</a></li>
+                            <li><a href="{{ route('config.zones') }}">Zones</a></li>
+                            <li><a href="{{ route('config.charges') }}">Charges</a></li>
+                            <li><a href="{{ route('config.rates') }}">Rates</a></li>
+                            <li><a href="{{ route('config.gst') }}">GST</a></li>
+                        </ul>
+                    </li>
+                @endif
                 <li class="sidebar-list">
                     <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title" href="#">
-                        <svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
-                        </svg>
-                        <svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                        </svg>
-                        <span>System Config </span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="{{ route('config.carriers') }}">Carriers</a></li>
-                        <li><a href="{{ route('config.centers') }}">Centers</a></li>
-                        <li><a href="{{ route('config.zones') }}">Zones</a></li>
-                        <li><a href="{{ route('config.charges') }}">Charges</a></li>
-                        <li><a href="{{ route('config.rates') }}">Rates</a></li>
-                        <li><a href="{{ route('config.gst') }}">GST</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-list">
-                    <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="#">
+                    <a class="sidebar-link sidebar-title link-nav" href="javascript:void(0)"
+                        onclick="document.getElementById('logout-form').submit();">
                         <svg class="stroke-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-file') }}"></use>
                         </svg>
@@ -217,6 +228,9 @@
                         </svg>
                         <span>Logout</span>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </li>
             </ul>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
