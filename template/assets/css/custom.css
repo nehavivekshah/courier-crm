@@ -1,0 +1,109 @@
+.text-primary {
+    color: #006666 !important;
+}
+.text-warning,
+.badge-light-warning {
+    color: rgb(159 114 31) !important;
+}
+.page-wrapper.compact-wrapper .page-body-wrapper div.sidebar-wrapper .sidebar-main .sidebar-links .simplebar-wrapper .simplebar-mask .simplebar-content-wrapper .simplebar-content>li .sidebar-link.active {
+    margin-bottom: 0;
+}
+.recent-bookings .list-group {
+    max-height: 405px;
+}
+.recent-bookings .btn-group-vertical a {
+    margin: 2px 0;
+    padding: 6px;
+    border-radius: 4px;
+    color: #000;
+}
+.recent-bookings .btn-group-vertical i {
+    font-size: 115%;
+    margin: 0;
+}
+table.dataTable.display tbody tr.odd>.sorting_1 {
+    white-space: nowrap;
+}
+table ul.action a {
+    padding: 5px;
+    border-radius: 3px;
+}
+table ul.action a i {
+    font-size: 14px;
+}
+footer {
+    margin-top: 15px;
+}
+@media (max-width:768px) {
+    .page-wrapper .card .card-header,
+    .page-wrapper .card .card-body,
+    .page-wrapper .card .card-footer {
+        padding: 10px;
+    }
+    .small-widget .card-body .product-sub {
+        height: 38px;
+        width: 38px;
+    }
+    .page-wrapper .page-body-wrapper .card {
+        margin-bottom: 0;
+    }
+    .recent-bookings .btn-group-vertical {
+        flex-direction: row;
+    }
+    .recent-bookings .btn-group-vertical a {
+        margin: 0 2px;
+    }
+    .recent-bookings .btn-group-vertical i {
+        font-size: 105%;
+    }
+    div.dataTables_length,
+    div.dataTables_filter {
+        position: absolute;
+        top: 0;
+    }
+    div.dataTables_wrapper div.dataTables_filter {
+        width: 75%;
+    }
+    div.dataTables_wrapper div.dataTables_length {
+        width: 18%;
+    }
+    div.dataTables_length {
+        right: 0;
+    }
+    div.dataTables_filter {
+        left: 0;
+    }
+    .dataTables_wrapper {
+        padding-top: 50px;
+    }
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-size: 12px;
+        width: 100%;
+    }
+    div.dataTables_wrapper div.dataTables_length label {
+        font-size: 0;
+    }
+    div.dataTables_wrapper div.dataTables_length select {
+        font-size: 12px;
+        width: auto;
+        margin: 0;
+        padding-left: 5px;
+        height: 30px;
+    }
+    div.dataTables_wrapper .dataTables_filter input[type=search] {
+        width: 78% !important;
+    }
+    table th:last-child,
+    table td:last-child {
+        position: sticky !important;
+        right: 0;
+        background: #fff;
+    }
+    table th:last-child {
+        padding-right: 0.5rem !important;
+    }
+    table th:last-child:before,
+    table th:last-child:after {
+        display: none !important;
+    }
+}

@@ -1,0 +1,2 @@
+bookings receiver select option like senderclients
+logistics inwards drs-print-preview.php missing at print drs option
