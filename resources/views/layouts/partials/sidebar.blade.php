@@ -65,12 +65,12 @@
                     </a>
                     <ul class="sidebar-submenu">
                         <li><a href="{{ route('bookings.create') }}">Add New</a></li>
-                        <li><a href="#">Past Bookings</a></li>
+                        <li><a href="{{ route('bookings.history') }}">Past Bookings</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list">
                     <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="#">
+                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('clients.index') }}">
                         <svg class="stroke-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-user') }}"></use>
                         </svg>
@@ -82,7 +82,7 @@
                 </li>
                 <li class="sidebar-list">
                     <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="#">
+                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('receivers.index') }}">
                         <svg class="stroke-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-user') }}"></use>
                         </svg>
@@ -106,7 +106,7 @@
                     <ul class="sidebar-submenu">
                         <li><a href="{{ route('logistics.inwards') }}">Inwards</a></li>
                         <li><a href="{{ route('logistics.drs') }}">DRS Upload</a></li>
-                        <li><a href="#">Barcodes</a></li>
+                        <li><a href="{{ route('logistics.barcodes') }}">Barcodes</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list">
@@ -121,9 +121,9 @@
                         <span>Financials </span>
                     </a>
                     <ul class="sidebar-submenu">
-                        <li><a href="#">Income</a></li>
-                        <li><a href="#">Expense</a></li>
-                        <li><a href="#">Purchase Bills</a></li>
+                        <li><a href="{{ route('financials.income') }}">Income</a></li>
+                        <li><a href="{{ route('financials.expense') }}">Expense</a></li>
+                        <li><a href="{{ route('financials.purchase-bills') }}">Purchase Bills</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list">
@@ -138,16 +138,16 @@
                         <span>Reports </span>
                     </a>
                     <ul class="sidebar-submenu">
-                        <li><a href="#">Booking</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Bill Pending</a></li>
-                        <li><a href="#">Daily Collection</a></li>
-                        <li><a href="#">GST Report</a></li>
+                        <li><a href="{{ route('reports.booking') }}">Booking</a></li>
+                        <li><a href="{{ route('reports.delivery') }}">Delivery</a></li>
+                        <li><a href="{{ route('reports.bill-pending') }}">Bill Pending</a></li>
+                        <li><a href="{{ route('reports.daily-collection') }}">Daily Collection</a></li>
+                        <li><a href="{{ route('reports.gst') }}">GST Report</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list">
                     <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="#">
+                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('enquiries.index') }}">
                         <svg class="stroke-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-chat') }}"></use>
                         </svg>
@@ -176,7 +176,7 @@
                 </li>
                 <li class="sidebar-list">
                     <i class="fa fa-thumb-tack"></i>
-                    <a class="sidebar-link sidebar-title link-nav" href="#">
+                    <a class="sidebar-link sidebar-title link-nav" href="{{ route('profile.index') }}">
                         <svg class="stroke-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-file') }}"></use>
                         </svg>
@@ -198,12 +198,12 @@
                         <span>System Config </span>
                     </a>
                     <ul class="sidebar-submenu">
-                        <li><a href="#">Carriers</a></li>
-                        <li><a href="#">Centers</a></li>
-                        <li><a href="#">Zones</a></li>
-                        <li><a href="#">Charges</a></li>
-                        <li><a href="#">Rates</a></li>
-                        <li><a href="#">GST</a></li>
+                        <li><a href="{{ route('config.carriers') }}">Carriers</a></li>
+                        <li><a href="{{ route('config.centers') }}">Centers</a></li>
+                        <li><a href="{{ route('config.zones') }}">Zones</a></li>
+                        <li><a href="{{ route('config.charges') }}">Charges</a></li>
+                        <li><a href="{{ route('config.rates') }}">Rates</a></li>
+                        <li><a href="{{ route('config.gst') }}">GST</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list">

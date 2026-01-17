@@ -21,4 +21,9 @@ class LogisticController extends Controller
         // For the missing drs-print-preview.php logic
         return view('logistics.drs-print');
     }
+
+    public function barcodes()
+    {
+        return view('logistics.barcodes');
+    }
 }

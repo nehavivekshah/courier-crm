@@ -10,4 +10,9 @@ class BookingController extends Controller
     {
         return view('bookings.create');
     }
+
+    public function history()
+    {
+        return view('bookings.history');
+    }
 }
